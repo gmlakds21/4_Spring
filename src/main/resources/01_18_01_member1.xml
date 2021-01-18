@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 어느테이션 기반 bean 설정 -->
+    <context:component-scan base-package="_01_18_01_Members.service, _01_18_01_Members.dao"/>
+
+    <!-- 표준 JDBC API - 소규모 -->
+    <bean id="basicDataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName"
+                  value="org.mariadb.jdbc.Driver"/>
+        <property name="url"
+                  value="jdbc:mariadb://maria-db.coqecfviusin.ap-northeast-2.rds.amazonaws.com:3306/spring4"/>
+        <property name="username"
+                  value="spring4"/>
+        <property name="password"
+                  value="spring42020"/>
+    </bean>
+
+    <!-- DBCP API - 대규모 -->
+
+    <!-- JNDI API - 분산환경 -->
+
+    <!-- 스프링 JDBC template 정의 -->
+    <bean id="jdbcTemplate"
+          class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="basicDataSource"/>
+        <!-- ref 는 bean 에서 선언한 id 를 가져다 쓴다.  -->
+    </bean>
+
+</beans>

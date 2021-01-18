@@ -50,7 +50,7 @@ class _01_15_06_HelloSpring4App08 {
 
         // 스프링 컨테이너의 관리를 받는 객체들이 정의된 설정파일 읽기
         ApplicationContext ctx =
-                new ClassPathXmlApplicationContext("_01_15_06_HelloSpring08.xml");
+                new ClassPathXmlApplicationContext("01_15_06_HelloSpring8.xml");
 
         // 스프링 컨테이너를 통해 지정한 객체를 주입받음
         _01_15_06_HelloSpring4Interface06 bean = null;

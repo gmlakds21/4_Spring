@@ -14,7 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class _01_15_07_ProductApp04 {
     public static void main(String[] args) {
 
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("_01_15_07_Product04.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("01_15_07_Product4.xml");
 
         _01_15_07_ProductInterSer04 ps = (_01_15_07_ProductInterSer04) ctx.getBean("ps04");
 
