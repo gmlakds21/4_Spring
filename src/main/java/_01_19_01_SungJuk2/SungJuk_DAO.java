@@ -1,4 +1,4 @@
-package _01_18_02_SungJuk2;
+package _01_19_01_SungJuk2;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -12,28 +12,28 @@ public class SungJuk_DAO implements SungJuk_InterDAO {
     private SqlSession sqlSession;
 
     @Override
-    public int insertSungJuk(SunkJuk_VO sj) {
+    public int insertSungJuk(SungJuk_VO sj) {
         return sqlSession.insert("sungjuk2.insertSungJuk", sj);
     }
 
     @Override
-    public List<SunkJuk_VO> selectSungJuk() {
+    public List<SungJuk_VO> selectSungJuk() {
         return sqlSession.selectList("sungjuk2.selectSungJuk");
     }
 
     @Override
-    public SunkJuk_VO selectOneSungJuk(String sjno) {
-        return sqlSession.selectOne("sungjuk2.selectOneSungJuk");
+    public SungJuk_VO selectOneSungJuk(String sjno) {
+        return sqlSession.selectOne("sungjuk2.selectOneSungJuk", sjno);
     }
 
     @Override
-    public int updateSungJuk(SunkJuk_VO sj) {
+    public int updateSungJuk(SungJuk_VO sj) {
         return sqlSession.update("sungjuk2.updateSungJuk");
     }
 
     @Override
     public int deleteSungJuk(int sjno) {
         return sqlSession.delete("sungjuk2.deleteSungJuk", sjno);
-    }
+    }//
 }
 

@@ -1,24 +1,14 @@
-package _01_18_03_Employee2;
+package _01_19_02_Employee2;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Scanner;
 
-/* 인사 관리 프로그램 v3
- * -------------------
- * 1. 인사 정보 입력
- * 2. 인사 정보 조회      (사번, 성, 이메일, 직책, 상사번호, 부서번호)
- * 3. 인사 정보 상세조회  (사번조회 -> 전부 다)
- * 4. 인사 정보 수정
- * 5. 인사 정보 삭제
- * 0. 프로그램 종료
- */
 public class Employee_Main {
     public static void main ( String [] args ) {
 
         Scanner sc = new Scanner(System.in);
-        //_01_15_09_Employee_Service ser = new _01_15_09_Employee_Service();
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("01_15_09_Employee.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("01_19_02_Employee2.xml");
         Employee_InterSer ser = (Employee_Service)ctx.getBean("ser");
 
 

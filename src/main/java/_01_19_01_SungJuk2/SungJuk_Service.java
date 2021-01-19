@@ -1,4 +1,4 @@
-package _01_18_02_SungJuk2;
+package _01_19_01_SungJuk2;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 @Service("sjsrv")
-public class SunkJuk_Service implements SungJuk_UI, SunkJuk_InterSer {
+public class SungJuk_Service implements SungJuk_UI, SungJuk_InterSer {
 
     @Autowired
     private SungJuk_InterDAO sjdao;
@@ -42,7 +42,7 @@ public class SunkJuk_Service implements SungJuk_UI, SunkJuk_InterSer {
         System.out.print("수학을 입력하세요 : ");
         mat = sc.nextInt();
 
-        SunkJuk_VO sj = new SunkJuk_VO(name, kor, eng, mat,
+        SungJuk_VO sj = new SungJuk_VO(name, kor, eng, mat,
                 0,0,' ');
 
         computeSungJuk(sj);
@@ -53,7 +53,7 @@ public class SunkJuk_Service implements SungJuk_UI, SunkJuk_InterSer {
         System.out.println(result);
     }
 
-    public void computeSungJuk(SunkJuk_VO sj) {
+    public void computeSungJuk(SungJuk_VO sj) {
         sj.setSum( sj.getKor() + sj.getEng() + sj.getMat() );
         sj.setMean( (double)sj.getSum() / 3 );
         switch((int)(sj.getMean() / 10)) {
@@ -70,9 +70,9 @@ public class SunkJuk_Service implements SungJuk_UI, SunkJuk_InterSer {
         StringBuilder sb = new StringBuilder();
         String fmt = "번호:%s, 이름:%s, 국어:%d, 영어:%d, 수학:%d, 등록일:%s\n";
 
-        List<SunkJuk_VO> sjs = sjdao.selectSungJuk();
+        List<SungJuk_VO> sjs = sjdao.selectSungJuk();
 
-        for(SunkJuk_VO sj : sjs) {
+        for(SungJuk_VO sj : sjs) {
             sb.append(String.format(fmt,sj.getSjno(),sj.getName(),
                     sj.getKor(),sj.getEng(),sj.getMat(),
                     sj.getRegdate().substring(0,10)));
@@ -88,7 +88,7 @@ public class SunkJuk_Service implements SungJuk_UI, SunkJuk_InterSer {
         System.out.print("조회할 성적번호는? ");
         String sjno = sc.nextLine();
 
-        SunkJuk_VO sj = sjdao.selectOneSungJuk(sjno);
+        SungJuk_VO sj = sjdao.selectOneSungJuk(sjno);
 
         String result = String.format(fmt, sj.getSjno(),
                 sj.getName(), sj.getKor(), sj.getEng(),
@@ -101,7 +101,7 @@ public class SunkJuk_Service implements SungJuk_UI, SunkJuk_InterSer {
     public void modifySungJuk() {
         Scanner sc = new Scanner(System.in);
         String result = "회원 정보 수정 실패";
-        SunkJuk_VO sj = new SunkJuk_VO();
+        SungJuk_VO sj = new SungJuk_VO();
 
         System.out.print("수정할 성적번호는? ");
         sj.setSjno( sc.nextInt() );

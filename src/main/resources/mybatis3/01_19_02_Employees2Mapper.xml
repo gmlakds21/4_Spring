@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Employee2">
+    <insert id="insertEmp" statementType="PREPARED"
+            parameterType="_01_19_02_Employee2.Employee_VO">
+        insert into employees (first_name, last_name, email, phone_number, hire_date)
+        values (#{fname}, #{lname},#{email},#{phone},#{hdate})
+    </insert>
+
+    <select id="selectEmp" statementType="PREPARED"
+            resultType="_01_19_02_Employee2.Employee_VO">
+        select employee_id, first_name, last_name, email, phone_number, hire_date from employees order by employee_id
+    </select>
+
+    <select id="selectOneEmp" statementType="PREPARED"
+            parameterType="String" resultType="_01_19_02_Employee2.Employee_VO">
+        select employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct,
+               manager_id, department_id from employees where employee_id = #{empno}
+    </select>
+
+    <update id="updateEmp" statementType="PREPARED"
+            parameterType="_01_19_02_Employee2.Employee_VO">
+        update employees set first_name=#{fname}, last_name=#{lname}, email=#{email}, phone_number=#{phone}
+        where employee_id=#{empno}
+    </update>
+
+    <delete id="deleteEmp" statementType="PREPARED"
+            parameterType="String">
+        delete from employees where employee_id=#{empno}
+    </delete>
+</mapper>

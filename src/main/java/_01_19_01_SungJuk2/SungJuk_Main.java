@@ -1,4 +1,4 @@
-package _01_18_02_SungJuk2;
+package _01_19_01_SungJuk2;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -6,18 +6,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.Scanner;
 
 public class SungJuk_Main {
-
     public static void main(String[] args) {
 
 
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("01_18_04_SungJuk2.xml");
-        SunkJuk_InterSer sjsrv = (SunkJuk_Service)ctx.getBean("sjsrv");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("01_19_01_SungJuk2.xml");
+        SungJuk_InterSer sjsrv = (SungJuk_Service)ctx.getBean("sjsrv");
 
         Scanner sc = new Scanner(System.in);
         String menu = "";
 
         while(true) {
-            ((SunkJuk_Service)sjsrv).displayMenu();
+            ((SungJuk_Service)sjsrv).displayMenu();
             menu = sc.nextLine();
 
             switch(menu) {

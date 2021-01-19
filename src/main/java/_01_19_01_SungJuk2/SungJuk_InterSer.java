@@ -1,6 +1,6 @@
-package _01_18_02_SungJuk2;
+package _01_19_01_SungJuk2;
 
-interface SunkJuk_InterSer {
+interface SungJuk_InterSer {
 
     void newSungJuk();
 

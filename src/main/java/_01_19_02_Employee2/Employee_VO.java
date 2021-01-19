@@ -1,4 +1,4 @@
-package _01_18_03_Employee2;
+package _01_19_02_Employee2;
 
 public class Employee_VO {
 
@@ -7,7 +7,7 @@ public class Employee_VO {
     private String lname;
     private String email;
     private String phone;
-    private String hdata;
+    private String hdate;
     private String jobid;
     private int sal;
     private double comm;
@@ -17,12 +17,12 @@ public class Employee_VO {
     public Employee_VO() {
     }
 
-    public Employee_VO(String fname, String lname, String email, String phone, String hdata, String jobid, int sal, double comm, int mgrid, int deptid) {
+    public Employee_VO(String fname, String lname, String email, String phone, String hdate, String jobid, int sal, double comm, int mgrid, int deptid) {
         this.fname = fname;
         this.lname = lname;
         this.email = email;
         this.phone = phone;
-        this.hdata = hdata;
+        this.hdate = hdate;
         this.jobid = jobid;
         this.sal = sal;
         this.comm = comm;
@@ -30,21 +30,21 @@ public class Employee_VO {
         this.deptid = deptid;
     }
 
-    public Employee_VO(String fname, String lname, String email, String phone, String hdata) {
+    public Employee_VO(String fname, String lname, String email, String phone, String hdate) {
         this.fname = fname;
         this.lname = lname;
         this.email = email;
         this.phone = phone;
-        this.hdata = hdata;
+        this.hdate = hdate;
     }
 
-    public Employee_VO(int empno, String fname, String lname, String email, String phone, String hdata, String jobid, int sal, double comm, int mgrid, int deptid) {
+    public Employee_VO(int empno, String fname, String lname, String email, String phone, String hdate, String jobid, int sal, double comm, int mgrid, int deptid) {
         this.empno = empno;
         this.fname = fname;
         this.lname = lname;
         this.email = email;
         this.phone = phone;
-        this.hdata = hdata;
+        this.hdate = hdate;
         this.jobid = jobid;
         this.sal = sal;
         this.comm = comm;
@@ -92,12 +92,12 @@ public class Employee_VO {
         this.phone = phone;
     }
 
-    public String getHdata() {
-        return hdata;
+    public String getHdate() {
+        return hdate;
     }
 
-    public void setHdata(String hdata) {
-        this.hdata = hdata;
+    public void setHdate(String hdate) {
+        this.hdate = hdate;
     }
 
     public String getJobid() {

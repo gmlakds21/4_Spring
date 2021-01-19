@@ -1,9 +1,9 @@
-package _01_18_03_Employee2;
+package _01_19_02_Employee2;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 @Service("ser")
@@ -30,8 +30,8 @@ public class Employee_Service implements Employee_InterSer {
 
     @Override
     public void readInfo() {
-
         Scanner sc = new Scanner(System.in);
+        String result = "사원 정보 생성 실패";
 
         System.out.println("FIRST_NAME 를 입력해 주세요");
         String fname = sc.nextLine();
@@ -39,30 +39,28 @@ public class Employee_Service implements Employee_InterSer {
         String lname = sc.nextLine();
         System.out.println("EMAIL 를 입력해 주세요");
         String email = sc.nextLine();
-        System.out.println("PHONE_NUMBER 를 입력해 주세요");
+        System.out.println("PHONE_NUMBER 를 입력해 주세요 (000-0000-0000)");
         String phone = sc.nextLine();
-        System.out.println("HIRE_DATE 를 입력해 주세요");
+        System.out.println("HIRE_DATE 를 입력해 주세요 (0000-00-00)");
         String hdata = sc.nextLine();
 
         Employee_VO employee = new Employee_VO(fname, lname, email, phone, hdata);
 
-        String result = dao.insertEmp(employee);
+        if(dao.insertEmp(employee)>0);
+            result = "사원 정보 생성 성공";
         System.out.println(result);
     }
 
     @Override
     public void showInfo() {
-        //사번, 성, 이메일, 직책, 상사번호, 부서번호
-
         Scanner sc = new Scanner(System.in);
-
         StringBuilder sb = new StringBuilder();
         String fmt = "employee_id : %d, First_name : %s, last_name : %s, email : %s, phone_number : %s, hire_date : %s\n";
 
-        ArrayList<Employee_VO> employees = dao.selectEmp();
+        List<Employee_VO> employees = dao.selectEmp();
         for ( Employee_VO employee : employees  ) {
             String result = String.format(fmt, employee.getEmpno(), employee.getFname(), employee.getLname(),
-                    employee.getEmail(), employee.getPhone(), employee.getHdata());
+                    employee.getEmail(), employee.getPhone(), employee.getHdate());
             sb.append(result);
         }
         System.out.println(sb.toString());
@@ -80,7 +78,7 @@ public class Employee_Service implements Employee_InterSer {
         String fmt = "employee_id : %d, First_name : %s, last_name : %s, email : %s, phone_number : %s, hire_date : %s" +
                 "job_id : %s, salay : %d, commission_pct : %.2f, manager_id : %d, department_id : %d\n";
         String result = String.format(fmt, employee.getEmpno(), employee.getFname(), employee.getLname(),
-                employee.getEmail(), employee.getPhone(), employee.getHdata(), employee.getJobid(),
+                employee.getEmail(), employee.getPhone(), employee.getHdate(), employee.getJobid(),
                 employee.getSal(), employee.getComm(), employee.getMgrid(), employee.getDeptid());
         System.out.println(result);
     }
@@ -89,34 +87,39 @@ public class Employee_Service implements Employee_InterSer {
     public void modifyInfo() {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("수정하시려는 employee_id를 입력해 주세요 : ");
+        String result = "사원 정보 수정 실패";
         Employee_VO employee = new Employee_VO();
 
+
+        System.out.println("수정하시려는 employee_id를 입력해 주세요 : ");
         employee.setEmpno( sc.nextInt() );
         String blink = sc.nextLine();
-
         System.out.println("first_name 를 입력해 주세요");
         employee.setFname(sc.nextLine());
         System.out.println("last_name 를 입력해 주세요");
         employee.setLname(sc.nextLine());
         System.out.println("email 를 입력해 주세요");
         employee.setEmail(sc.nextLine());
-        System.out.println("phone_number 를 입력해 주세요");
+        System.out.println("phone_number 를 입력해 주세요 (000-0000-0000)");
         employee.setPhone(sc.nextLine());
 
-        String result = dao.updateEmp( employee );
+        if (dao.updateEmp( employee ) > 0 );
+            result = "사원 정보 수정 성공";
 
         System.out.println(result);
     }
 
     @Override
     public void removeInfo() {
-
         Scanner sc = new Scanner(System.in);
+        String result = "사원 정보 삭제 실패";
+
         System.out.println("삭제하시려는 employee_id를 입력해 주세요 : ");
         String target = sc.nextLine();
 
-        String result = dao.deleteEmp( target );
+        if(dao.deleteEmp( target ) >0 )
+            result = "사원 정보 삭제 성공";
+
         System.out.println(result);
     }
 }

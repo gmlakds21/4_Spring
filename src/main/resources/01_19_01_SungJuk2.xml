@@ -6,22 +6,21 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 어느테이션 기반 bean 설정 -->
-    <context:component-scan base-package="_01_18_03_Employee2"/>
+    <context:component-scan base-package="_01_19_01_SungJuk2"/>
 
     <!-- DBCP API - 대규모 -->
     <bean id="dbcpDataSource" class="org.apache.commons.dbcp2.BasicDataSource"
         p:driverClassName="org.mariadb.jdbc.Driver"
-        p:url="jdbc:mariadb://maria-db.coqecfviusin.ap-northeast-2.rds.amazonaws.com:3306/Employees"
-        p:username="Employees"
-        p:password="Employees2020"/>
+        p:url="jdbc:mariadb://maria-db.coqecfviusin.ap-northeast-2.rds.amazonaws.com:3306/Sungjuk"
+        p:username="Sungjuk"
+        p:password="Sungjuk2020"/>
         <!-- 반복되는 property 코드를 생략하는 방법 -->
-
 
     <!-- JNDI API - 분산환경 -->
     <!-- myBatis3 설정#1 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
         p:dataSource-ref="dbcpDataSource"
-        p:mapperLocations="classpath:mybatis3/01_18_05_Employees2Mapper.xml"/>
+        p:mapperLocations="classpath:mybatis3/01_19_01_SungJuk2Mapper.xml"/>
 
     <!-- myBatis3 설정#2 -->
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">

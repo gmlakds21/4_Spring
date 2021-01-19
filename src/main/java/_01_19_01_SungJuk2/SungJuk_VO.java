@@ -1,41 +1,41 @@
-package _01_18_02_SungJuk2;
+package _01_19_01_SungJuk2;
 
-public class SunkJuk_VO {
+public class SungJuk_VO {
 
     private int sjno;
     private String name;
     private int kor;
     private int eng;
     private int mat;
-    private int sum;
+    private int tot;
     private double mean;
     private char grd;
     private String regdate;
 
 
-    public SunkJuk_VO() {
+    public SungJuk_VO() {
     }
 
-    public SunkJuk_VO(
+    public SungJuk_VO(
             String name, int kor, int eng, int mat,
-            int sum, double mean, char grd) {
+            int tot, double mean, char grd) {
         this.name = name;
         this.kor = kor;
         this.eng = eng;
         this.mat = mat;
-        this.sum = sum;
+        this.tot = tot;
         this.mean = mean;
         this.grd = grd;
     }
 
-    public SunkJuk_VO(int sjno, String name, int kor, int eng, int mat,
-                      int sum, double mean, char grd, String regdate) {
+    public SungJuk_VO(int sjno, String name, int kor, int eng, int mat,
+                      int tot, double mean, char grd, String regdate) {
         this.sjno = sjno;
         this.name = name;
         this.kor = kor;
         this.eng = eng;
         this.mat = mat;
-        this.sum = sum;
+        this.tot = tot;
         this.mean = mean;
         this.grd = grd;
         this.regdate = regdate;
@@ -74,11 +74,11 @@ public class SunkJuk_VO {
     }
 
     public int getSum() {
-        return sum;
+        return tot;
     }
 
     public void setSum(int sum) {
-        this.sum = sum;
+        this.tot = tot;
     }
 
     public double getMean() {
