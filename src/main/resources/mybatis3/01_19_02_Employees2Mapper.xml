@@ -5,30 +5,30 @@
 
 <mapper namespace="Employee2">
     <insert id="insertEmp" statementType="PREPARED"
-            parameterType="_01_19_02_Employee2.Employee_VO">
+            parameterType="seunghee.spring.mvc._01_19_02_Employee2.Employee_VO">
         insert into employees (first_name, last_name, email, phone_number, hire_date)
-        values (#{fname}, #{lname},#{email},#{phone},#{hdate})
+        values (#{first_name}, #{last_name},#{email},#{phone_number},#{hire_date})
     </insert>
 
-    <select id="selectEmp" statementType="PREPARED"
-            resultType="_01_19_02_Employee2.Employee_VO">
+    <select id="selectList" statementType="PREPARED"
+            resultType="seunghee.spring.mvc._01_19_02_Employee2.Employee_VO">
         select employee_id, first_name, last_name, email, phone_number, hire_date from employees order by employee_id
     </select>
 
-    <select id="selectOneEmp" statementType="PREPARED"
-            parameterType="String" resultType="_01_19_02_Employee2.Employee_VO">
+    <select id="selectOne" statementType="PREPARED"
+            parameterType="String" resultType="seunghee.spring.mvc._01_19_02_Employee2.Employee_VO">
         select employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct,
-               manager_id, department_id from employees where employee_id = #{empno}
+               manager_id, department_id from employees where employee_id = #{employee_id}
     </select>
 
     <update id="updateEmp" statementType="PREPARED"
-            parameterType="_01_19_02_Employee2.Employee_VO">
-        update employees set first_name=#{fname}, last_name=#{lname}, email=#{email}, phone_number=#{phone}
-        where employee_id=#{empno}
+            parameterType="seunghee.spring.mvc._01_19_02_Employee2.Employee_VO">
+        update employees set first_name=#{first_name}, last_name=#{last_name}, email=#{email}, phone_number=#{phone_number}
+        where employee_id=#{employee_id}
     </update>
 
     <delete id="deleteEmp" statementType="PREPARED"
             parameterType="String">
-        delete from employees where employee_id=#{empno}
+        delete from employees where employee_id=#{employee_id}
     </delete>
 </mapper>

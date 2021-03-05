@@ -5,23 +5,23 @@
 
 <mapper namespace="sungjuk2">
     <insert id="insertSungJuk" statementType="PREPARED"
-            parameterType="_01_19_01_SungJuk2.SungJuk_VO">
+            parameterType="seunghee.spring.mvc._01_19_01_SungJuk2.SungJuk_VO">
         insert into Sungjuk (name,kor,eng,mat,tot,mean,grd)
         values (#{name},#{kor},#{eng},#{mat},#{tot},#{mean},#{grd})
     </insert>
 
     <select id="selectSungJuk" statementType="PREPARED"
-            resultType="_01_19_01_SungJuk2.SungJuk_VO">
+            resultType="seunghee.spring.mvc._01_19_01_SungJuk2.SungJuk_VO">
         select sjno,name,kor,eng,mat,regdate from Sungjuk order by sjno desc
     </select>
 
     <select id="selectOneSungJuk" statementType="PREPARED"
-            parameterType="String" resultType="_01_19_01_SungJuk2.SungJuk_VO">
+            parameterType="String" resultType="seunghee.spring.mvc._01_19_01_SungJuk2.SungJuk_VO">
         select * from Sungjuk where sjno=#{sjno}
     </select>
 
     <update id="updateSungJuk" statementType="PREPARED"
-            parameterType="_01_19_01_SungJuk2.SungJuk_VO">
+            parameterType="seunghee.spring.mvc._01_19_01_SungJuk2.SungJuk_VO">
         update Sungjuk set kor=#{kor},eng=#{eng},mat=#{mat},tot=#{tot},mean=#{mean},grd=#{grd},regdate=sysdate() where sjno=#{sjno}
     </update>
 

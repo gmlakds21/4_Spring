@@ -5,12 +5,12 @@
 
 <mapper namespace="member">
     <insert id="insertMember" statementType="PREPARED"
-            parameterType="_01_18_01_Members.vo.MemberVO03">
+            parameterType="seunghee.spring.mvc._01_18_01_Members.vo.MemberVO03">
         insert into member values (#{userid},#{passwd},#{name},#{grade},#{points},#{regdate})
     </insert>
 
     <update id="updateMember" statementType="PREPARED"
-            parameterType="_01_18_01_Members.vo.MemberVO03">
+            parameterType="seunghee.spring.mvc._01_18_01_Members.vo.MemberVO03">
         update member set name= #{name}, grade= #{grade}, points= #{points} where userid= #{userid}
     </update>
 
@@ -20,12 +20,12 @@
     </delete>
 
     <select id="selectList" statementType="PREPARED"
-            resultType="_01_18_01_Members.vo.MemberVO03">
+            resultType="seunghee.spring.mvc._01_18_01_Members.vo.MemberVO03">
         select userid, grade, regdate from member
     </select>
 
     <select id="selectOne" statementType="PREPARED"
-            parameterType="String" resultType="_01_18_01_Members.vo.MemberVO03">
+            parameterType="String" resultType="seunghee.spring.mvc._01_18_01_Members.vo.MemberVO03">
         select userid, name, grade, points, regdate from member where userid = #{userid}
     </select>
 </mapper>
