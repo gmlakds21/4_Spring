@@ -13,7 +13,7 @@
         p:driverClassName="org.mariadb.jdbc.Driver"
         p:url="jdbc:mariadb://maria-db.coqecfviusin.ap-northeast-2.rds.amazonaws.com:3306/Sungjuk"
         p:username="Sungjuk"
-        p:password="Sungjuk2020"/>
+        p:password="tmdgml201"/>
         <!-- 반복되는 property 코드를 생략하는 방법 -->
 
     <!-- JNDI API - 분산환경 -->

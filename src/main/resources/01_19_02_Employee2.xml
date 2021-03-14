@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 어느테이션 기반 bean 설정 -->
     <context:component-scan base-package="seunghee.spring.mvc._01_19_02_Employee2"/>
@@ -13,9 +16,8 @@
         p:driverClassName="org.mariadb.jdbc.Driver"
         p:url="jdbc:mariadb://maria-db.coqecfviusin.ap-northeast-2.rds.amazonaws.com:3306/Employees"
         p:username="Employees"
-        p:password="Employees2020"/>
+        p:password="tmdgml201"/>
         <!-- 반복되는 property 코드를 생략하는 방법 -->
-
 
     <!-- JNDI API - 분산환경 -->
     <!-- myBatis3 설정#1 -->

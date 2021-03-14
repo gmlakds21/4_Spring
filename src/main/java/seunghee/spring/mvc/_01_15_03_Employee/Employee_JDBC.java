@@ -27,7 +27,7 @@ public class Employee_JDBC {
         String DRV = "org.mariadb.jdbc.Driver";
         String URL = "jdbc:mariadb://maria-db.coqecfviusin.ap-northeast-2.rds.amazonaws.com:3306/Employees";
         String USR = "Employees";
-        String PWD = "Employees2020";
+        String PWD = "tmdgml201";
 
         Connection conn = null;
         try {

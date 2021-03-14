@@ -1,6 +1,5 @@
-package seunghee.spring.mvc._01_18_01_Members.service;
+package seunghee.spring.mvc._01_18_01_Members.anno03;
 
-import seunghee.spring.mvc._01_18_01_Members.dao.MemberDAO03;
 import seunghee.spring.mvc._01_18_01_Members.vo.MemberVO03;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

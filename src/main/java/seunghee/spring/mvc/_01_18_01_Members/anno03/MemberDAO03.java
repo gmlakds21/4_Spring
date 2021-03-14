@@ -1,4 +1,4 @@
-package seunghee.spring.mvc._01_18_01_Members.dao;
+package seunghee.spring.mvc._01_18_01_Members.anno03;
 
 import seunghee.spring.mvc._01_18_01_Members.vo.MemberVO03;
 import org.apache.ibatis.session.SqlSession;

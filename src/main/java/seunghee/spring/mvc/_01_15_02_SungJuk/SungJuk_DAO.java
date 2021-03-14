@@ -17,9 +17,9 @@ public class SungJuk_DAO implements SungJuk_InterDAO {
         PreparedStatement pstmt = null;
         String result = "성적데이터 처리중...?!?";
 
-        conn = SungJuk_DBC.makeConn();
+        conn = SungJuk_JDBC.makeConn();
         try {
-            pstmt = conn.prepareStatement(SungJuk_DBC.insertSungJuk);
+            pstmt = conn.prepareStatement(SungJuk_JDBC.insertSungJuk);
             pstmt.setString(1, sj.getName());
             pstmt.setInt(2, sj.getKor());
             pstmt.setInt(3, sj.getEng());
@@ -32,7 +32,7 @@ public class SungJuk_DAO implements SungJuk_InterDAO {
         } catch (SQLException se) {
             System.out.println("insertSQL에서 오류발생!!");
         }
-        SungJuk_DBC.destoryConn(conn, pstmt);
+        SungJuk_JDBC.destoryConn(conn, pstmt);
 
         return result;
     }
@@ -46,9 +46,9 @@ public class SungJuk_DAO implements SungJuk_InterDAO {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
-        conn = SungJuk_DBC.makeConn();
+        conn = SungJuk_JDBC.makeConn();
         try {
-            pstmt = conn.prepareStatement(SungJuk_DBC.selectSungJuk);
+            pstmt = conn.prepareStatement(SungJuk_JDBC.selectSungJuk);
             rs = pstmt.executeQuery();
             while(rs.next()){
                 SunkJuk_VO sj = new SunkJuk_VO(
@@ -65,7 +65,7 @@ public class SungJuk_DAO implements SungJuk_InterDAO {
             System.out.println("selectSungJuk에서 오류발생!!");
             se.printStackTrace();
         }
-        SungJuk_DBC.destoryConn(conn,pstmt,rs);
+        SungJuk_JDBC.destoryConn(conn,pstmt,rs);
 
         return sjs;
     }
@@ -79,9 +79,9 @@ public class SungJuk_DAO implements SungJuk_InterDAO {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
-        conn = SungJuk_DBC.makeConn();
+        conn = SungJuk_JDBC.makeConn();
         try {
-            pstmt = conn.prepareStatement(SungJuk_DBC.selectOneSungJuk);
+            pstmt = conn.prepareStatement(SungJuk_JDBC.selectOneSungJuk);
             pstmt.setString(1, sjno);
             rs = pstmt.executeQuery();
             if (rs.next()) {
@@ -99,7 +99,7 @@ public class SungJuk_DAO implements SungJuk_InterDAO {
             System.out.println("selectOneSungJuk에서 오류발생!!");
             se.printStackTrace();
         }
-        SungJuk_DBC.destoryConn(conn,pstmt,rs);
+        SungJuk_JDBC.destoryConn(conn,pstmt,rs);
 
         return sj;
     }
@@ -112,9 +112,9 @@ public class SungJuk_DAO implements SungJuk_InterDAO {
         PreparedStatement pstmt = null;
         String result = "성적데이터 수정처리중...?!?";
 
-        conn = SungJuk_DBC.makeConn();
+        conn = SungJuk_JDBC.makeConn();
         try {
-            pstmt = conn.prepareStatement(SungJuk_DBC.updateSungJuk);
+            pstmt = conn.prepareStatement(SungJuk_JDBC.updateSungJuk);
             pstmt.setInt(1, sj.getKor());
             pstmt.setInt(2, sj.getEng());
             pstmt.setInt(3, sj.getMat());
@@ -129,7 +129,7 @@ public class SungJuk_DAO implements SungJuk_InterDAO {
             System.out.println("updateSungJuk에서 오류발생!!");
             se.printStackTrace();
         }
-        SungJuk_DBC.destoryConn(conn, pstmt);
+        SungJuk_JDBC.destoryConn(conn, pstmt);
 
         return result;
     }
@@ -143,9 +143,9 @@ public class SungJuk_DAO implements SungJuk_InterDAO {
         PreparedStatement pstmt = null;
         String result = "성적데이터 삭제처리중...?!?";
 
-        conn = SungJuk_DBC.makeConn();
+        conn = SungJuk_JDBC.makeConn();
         try {
-            pstmt = conn.prepareStatement(SungJuk_DBC.deleteSungJuk);
+            pstmt = conn.prepareStatement(SungJuk_JDBC.deleteSungJuk);
             pstmt.setInt(1, sjno);
 
             int cnt = pstmt.executeUpdate();
@@ -154,7 +154,7 @@ public class SungJuk_DAO implements SungJuk_InterDAO {
             System.out.println("deleteSungJuk에서 오류!!");
             se.printStackTrace();
         }
-        SungJuk_DBC.destoryConn(conn, pstmt);
+        SungJuk_JDBC.destoryConn(conn, pstmt);
 
         return result;
     }

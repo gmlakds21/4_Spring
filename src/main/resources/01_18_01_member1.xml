@@ -6,7 +6,7 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 어느테이션 기반 bean 설정 -->
-    <context:component-scan base-package="seunghee.spring.mvc._01_18_01_Members.service, seunghee.spring.mvc._01_18_01_Members.dao"/>
+    <context:component-scan base-package="seunghee.spring.mvc._01_18_01_Members.anno01"/>
 
     <!-- 표준 JDBC API - 소규모 -->
     <bean id="basicDataSource"
@@ -18,7 +18,7 @@
         <property name="username"
                   value="spring4"/>
         <property name="password"
-                  value="spring42020"/>
+                  value="tmdgml201"/>
     </bean>
 
     <!-- DBCP API - 대규모 -->

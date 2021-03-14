@@ -11,7 +11,6 @@ public class Employee_Main {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("01_19_02_Employee2.xml");
         Employee_InterSer ser = (Employee_Service)ctx.getBean("ser");
 
-
         String check = "";
         while ( !check.equals("0")) {
             ser.displayMenu();

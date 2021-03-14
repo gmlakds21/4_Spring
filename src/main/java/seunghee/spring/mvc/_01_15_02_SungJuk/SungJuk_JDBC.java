@@ -1,6 +1,6 @@
 package seunghee.spring.mvc._01_15_02_SungJuk;
 
-public class SungJuk_DBC extends SungJuk_Utill {
+public class SungJuk_JDBC extends SungJuk_Utill {
 
     public static String insertSungJuk =
             " insert into Sungjuk (name,kor,eng,mat, tot,mean,grd) " +

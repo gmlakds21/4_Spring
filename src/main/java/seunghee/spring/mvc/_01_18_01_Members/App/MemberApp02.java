@@ -1,6 +1,6 @@
 package seunghee.spring.mvc._01_18_01_Members.App;
 
-import seunghee.spring.mvc._01_18_01_Members.service.MemberService01;
+import seunghee.spring.mvc._01_18_01_Members.anno01.MemberService01;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

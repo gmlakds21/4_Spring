@@ -8,7 +8,5 @@ public interface Employee_InterSer {
     void showAllInfo();
     void modifyInfo();
     void removeInfo();
+
 }
-
-
-
